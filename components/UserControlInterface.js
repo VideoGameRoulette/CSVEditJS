@@ -1,28 +1,51 @@
-import React, { useEffect, useState } from "react";
-import TileMapSize from "./TileMapSize";
+import React, { useState } from "react";
+import MapDetails from "./MapDetails";
 import SelectedTile from "./SelectedTile";
 import FileSys from "./FileSys";
+import { RoomTypes } from "./RoomTypes";
+import { DropdownMenu } from "./DropdownMenu";
+import { classNames } from "utils";
 
-const UserControlInterface = ({ data, selectedSquare, setData }) => {
-    const [width, setWidth] = useState(0);
-    const [height, setHeight] = useState(0);
+const presets = [0, 126, 127, 128, 129, 130, 131];
 
-    useEffect(() => {
-        setWidth(data.length > 0 ? data[0].length : 0);
-        setHeight(data.length);
-    }, [data]);
+const UserControlInterface = ({ data, selectedSquare, setData, setSquareValue }) => {
+    const [currentMap, setMap] = useState({
+        name: "",
+        width: 0,
+        height: 0,
+    });
+
+    const filteredRooms = RoomTypes.filter((obj) => presets.includes(obj.value));
+
+    function getItemByValue(value) {
+        const roomType = RoomTypes.find(room => room.value === value);
+        return roomType.item ? roomType.item : "";
+    }
 
     return (
         <div className="h-full w-full bg-gray-200 dark:bg-gray-800 p-4">
             <div className="flex flex-col gap-2">
-                <FileSys data={data} setData={setData} width={width} height={height} />
-                <TileMapSize
-                    width={width}
-                    height={height}
-                    setWidth={setWidth}
-                    setHeight={setHeight}
+                <FileSys data={data} setData={setData} fileName={currentMap.name} setMap={setMap} />
+                <MapDetails
+                    width={currentMap.width}
+                    height={currentMap.height}
+                    name={currentMap.name}
                 />
                 <SelectedTile selectedSquare={selectedSquare} />
+                <DropdownMenu options={RoomTypes} selectedSquare={selectedSquare} onSelect={setSquareValue} />
+                <div className="w-full grid grid-cols-4 gap-2">
+                    {filteredRooms.map(room => (
+                        <button
+                            key={room.name}
+                            title={room.name}
+                            type="button"
+                            className={classNames(room.color, "w-full py-2 text-gray-200 font-bold rounded-md hover:opacity-80 flex justify-center items-center")}
+                            onClick={() => setSquareValue(selectedSquare.x, selectedSquare.y, room.value)}
+                        >
+                            <div className={getItemByValue(room.value)}>{room.item ? "" : room.value}</div>
+                        </button>
+                    ))}
+                </div>
             </div>
         </div>
     );

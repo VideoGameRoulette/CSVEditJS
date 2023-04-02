@@ -5,7 +5,7 @@ const SelectedTile = ({ selectedSquare }) => {
         <div className="bg-gray-700 p-4 rounded-md text-white">
             <h2 className="text-lg font-bold mb-2">Selected Tile</h2>
             {selectedSquare ? (
-                <div>
+                <div className="bg-gray-900 p-2 rounded-md">
                     <p className="text-gray-200">
                         <strong>X:</strong> {selectedSquare.x}
                     </p>
