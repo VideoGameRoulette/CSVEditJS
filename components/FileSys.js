@@ -86,7 +86,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
         };
     };
 
-    const handleClickLoadPreset1 = async (filePath) => {
+    const handleClickLoadPreset = async (filePath) => {
         const response = await fetch(filePath);
         if (!response.ok) {
             // handle error
@@ -140,7 +140,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map1.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map1.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Eribu</span>
@@ -149,7 +149,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map2.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map2.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Absu</span>
@@ -158,7 +158,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map3.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map3.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Zi</span>
@@ -167,7 +167,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map4.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map4.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Kur</span>
@@ -176,7 +176,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map5.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map5.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Indi</span>
@@ -185,7 +185,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map6.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map6.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Ukkin-Na</span>
@@ -194,7 +194,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map7.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map7.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Edin</span>
@@ -203,7 +203,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map8.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map8.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">E-Kur-Mah</span>
@@ -212,7 +212,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/map9.csv')}
+                        onClick={() => handleClickLoadPreset('maps/map9.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">Mar-Uru</span>
@@ -221,7 +221,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 <div className="w-auto">
                     <button
                         className="tooltip bg-gray-900 hover:bg-gray-800 rounded-lg p-2 transition-colors duration-200 ease-in-out"
-                        onClick={() => handleClickLoadPreset1('/maps/World.csv')}
+                        onClick={() => handleClickLoadPreset('maps/World.csv')}
                     >
                         <FaMap />
                         <span className="tooltiptext">World</span>
