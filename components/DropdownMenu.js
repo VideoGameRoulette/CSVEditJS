@@ -19,8 +19,7 @@ export const DropdownMenu = ({ options, selectedSquare, onSelect }) => {
         <div className="relative">
             <div
                 className="w-full bg-gray-900 rounded-md shadow-md cursor-pointer py-2 px-3 text-white flex justify-between items-center"
-                onFocus={() => setIsOpen(!isOpen)}
-                onBlur={() => setIsOpen(false)}
+                onFocus={() => setIsOpen(true)}
             >
                 <input
                     type="text"
