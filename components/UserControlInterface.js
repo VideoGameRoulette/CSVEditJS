@@ -25,7 +25,7 @@ const UserControlInterface = ({ data, selectedSquare, setData, setSquareValue })
     return (
         <div className="h-full w-full bg-gray-200 dark:bg-gray-800 p-4">
             <div className="flex flex-col gap-2">
-                <FileSys data={data} setData={setData} fileName={currentMap.name} setMap={setMap} />
+                <FileSys d={data} cb={setData} fileName={currentMap.name} setMap={setMap} />
                 <MapDetails
                     width={currentMap.width}
                     height={currentMap.height}

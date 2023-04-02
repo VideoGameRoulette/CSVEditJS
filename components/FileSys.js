@@ -3,7 +3,7 @@ import { FiUpload, FiFilePlus, FiSave } from "react-icons/fi";
 import { FaMap } from "react-icons/fa";
 import path from 'path';
 
-const FileSys = ({ data, setData, fileName, setMap }) => {
+const FileSys = ({ d, cb, fileName, setMap }) => {
     const handleFileUpload = (e) => {
         const file = e.target.files[0];
 
@@ -21,7 +21,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 .map((row) => {
                     return row.split(",").map((cell) => parseInt(cell));
                 });
-            setData(parsedData);
+            cb(parsedData);
             setMap({
                 name: file.name,
                 width: parsedData.length > 0 ? parsedData[0].length : 0,
@@ -41,7 +41,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
             const newMap = Array.from({ length: newHeight }, () =>
                 Array.from({ length: newWidth }, () => 0)
             );
-            setData(newMap);
+            cb(newMap);
             setMap({
                 name: "map.csv",
                 width: newWidth,
@@ -58,7 +58,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
     const handleClickSave = () => {
         const csvContent =
             "data:text/csv;charset=utf-8," +
-            data.map((row) => row.join(",")).join("\n");
+            d.map((row) => row.join(",")).join("\n");
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
@@ -77,7 +77,7 @@ const FileSys = ({ data, setData, fileName, setMap }) => {
                 .map((row) => {
                     return row.split(",").map((cell) => parseInt(cell));
                 });
-            setData(parsedData);
+            cb(parsedData);
             setMap({
                 name: file.name,
                 width: parsedData.length > 0 ? parsedData[0].length : 0,
