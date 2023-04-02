@@ -1,11 +1,24 @@
 import { useState } from "react";
 import { classNames } from "utils";
 
+function sortRoomTypesByName(roomTypes) {
+    return roomTypes.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
+}
+
 export const DropdownMenu = ({ options, selectedSquare, onSelect }) => {
     const [searchText, setSearchText] = useState("");
     const [isOpen, setIsOpen] = useState(false);
 
-    const filteredOptions = options.filter((option) =>
+    const sortedOptions = sortRoomTypesByName(options);
+    const filteredOptions = sortedOptions.filter((option) =>
         option.name.toLowerCase().includes(searchText.toLowerCase())
     );
 
@@ -34,6 +47,7 @@ export const DropdownMenu = ({ options, selectedSquare, onSelect }) => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    onClick={() => setIsOpen(!isOpen)}
                 >
                     <path
                         strokeLinecap="round"
@@ -48,11 +62,12 @@ export const DropdownMenu = ({ options, selectedSquare, onSelect }) => {
                     {filteredOptions.map((option) => (
                         <div
                             key={option.value}
-                            className="bg-gray-900 hover:bg-gray-700 text-gray-200 flex justify-between items-center py-2 px-3 cursor-pointer"
+                            className="bg-gray-900 hover:bg-gray-700 text-gray-200 flex justify-start items-center py-2 px-3 cursor-pointer gap-2"
                             onClick={() => handleSelect(option)}
                         >
+                            {option.item === null && <div className={classNames(option.color, "w-8 h-8")} />}
+                            {option.item && <div className={classNames(option.item, "w-8 h-8")} />}
                             {option.name}
-                            {option.item && <div className={option.item} />}
                         </div>
                     ))}
                 </div>

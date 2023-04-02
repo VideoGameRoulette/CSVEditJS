@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MapDetails from "./MapDetails";
 import SelectedTile from "./SelectedTile";
 import FileSys from "./FileSys";
@@ -33,6 +33,7 @@ const UserControlInterface = ({ data, selectedSquare, setData, setSquareValue })
                 />
                 <SelectedTile selectedSquare={selectedSquare} />
                 <DropdownMenu options={RoomTypes} selectedSquare={selectedSquare} onSelect={setSquareValue} />
+                <button type="button" className="hidden" />
                 <div className="w-full grid grid-cols-4 gap-2">
                     {filteredRooms.map(room => (
                         <button

@@ -56,7 +56,7 @@ export const RoomTypes = [
     {
         name: "Kilver",
         value: 9,
-        color: "bg-rose-600",
+        color: "bg-indigo-500",
         item: "bg-kilver w-full h-full bg-no-repeat bg-center"
     },
     {
@@ -194,7 +194,7 @@ export const RoomTypes = [
     {
         name: "HealthNode3",
         value: 32,
-        color: "bg-rose-600",
+        color: "bg-red-700",
         item: "bg-healthnode w-full h-full bg-no-repeat bg-center"
     },
     {
@@ -500,7 +500,7 @@ export const RoomTypes = [
     {
         name: "GlitchBomb",
         value: 83,
-        color: "bg-rose-600",
+        color: "bg-indigo-500",
         item: "bg-glitchbomb w-full h-full bg-no-repeat bg-center"
     },
     {
@@ -692,7 +692,7 @@ export const RoomTypes = [
     {
         name: "PowerNodeFragment12",
         value: 115,
-        color: "bg-rose-600",
+        color: "bg-black",
         item: "bg-powernodefragment w-full h-full bg-no-repeat bg-center"
     },
     {
