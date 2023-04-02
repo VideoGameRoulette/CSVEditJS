@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Condensed&family=Bebas+Neue&display=swap');
+@import-normalize;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+  
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	left: 50%;
+	margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+	visibility: visible;
+  }
+  
