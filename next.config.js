@@ -1,12 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production' | true;
+const isDev = process.env.NODE_ENV !== 'production';
 
 const nextConfig = {
   reactStrictMode: true,
+  basePath: isDev ? '' : '/CSVEditJS',
+  assetPrefix: isDev ? '' : '/CSVEditJS',
 };
-
-if (isProd) {
-  nextConfig.basePath = '/CSVEditJS';
-  nextConfig.assetPrefix = '/CSVEditJSy';
-}
 
 module.exports = nextConfig;
